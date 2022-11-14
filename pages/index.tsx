@@ -25,11 +25,15 @@ export default function Home() {
 
 				{user ? (
 					<>
+						<h2>{user.displayName}</h2>
 						<Lists />
 						<SignOutButton />
 					</>
 				) : (
-					<SignInButton />
+					<>
+						<h2>Get started...</h2>
+						<SignInButton />
+					</>
 				)}
 			</main>
 

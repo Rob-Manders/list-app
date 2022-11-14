@@ -1,0 +1,17 @@
+.button {
+	cursor: pointer;
+	background-color: #dadada;
+	font-size: 1.125rem;
+	font-weight: 500;
+	margin: 0.5rem;
+	padding: 0.5rem 1.25rem;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0px 2px 4px 0px #b6b6b6;
+	transition: 150ms ease-in-out;
+
+	&:hover,
+	&:focus {
+		background-color: #62a6ff;
+	}
+}
