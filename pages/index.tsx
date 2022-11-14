@@ -1,9 +1,10 @@
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import Head from 'next/head'
 import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 import SignInButton from '../components/SignInButton'
 import SignOutButton from '../components/SignOutButton'
+import Lists from '../components/Lists'
 
 export default function Home() {
 	const { user } = useContext(UserContext)
@@ -22,7 +23,14 @@ export default function Home() {
 			<main className={styles.main}>
 				<h1 className={styles.title}>List App</h1>
 
-				{user ? <SignOutButton /> : <SignInButton />}
+				{user ? (
+					<>
+						<Lists />
+						<SignOutButton />
+					</>
+				) : (
+					<SignInButton />
+				)}
 			</main>
 
 			<footer className={styles.footer}>

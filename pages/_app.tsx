@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import { UserContext } from '../context/UserContext'
 import useUser from '../hooks/useUserData'
 
