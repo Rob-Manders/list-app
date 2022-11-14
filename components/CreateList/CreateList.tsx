@@ -23,7 +23,7 @@ export default function CreateList() {
 	async function addList(event) {
 		event.preventDefault()
 
-		if (validInput(inputValue)) {
+		if (valid) {
 			const listsCollection = collection(
 				getFirestore(),
 				'users',
