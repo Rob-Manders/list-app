@@ -25,12 +25,13 @@ export default function Home() {
 
 				{user ? (
 					<>
-						<h2>{user.displayName}</h2>
+						<p>{user.displayName}'s Lists</p>
 						<Lists />
 						<SignOutButton />
 					</>
 				) : (
 					<>
+						<p>A simple checklist app for all your checklist needs.</p>
 						<h2>Get started...</h2>
 						<SignInButton />
 					</>
