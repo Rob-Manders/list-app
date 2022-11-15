@@ -1,4 +1,5 @@
 import styles from './List.module.scss'
+import Link from 'next/link'
 import { doc, deleteDoc, getFirestore } from 'firebase/firestore'
 import { useContext } from 'react'
 import { UserContext } from '../../context/UserContext'
@@ -12,7 +13,7 @@ export default function List({ id, list }) {
 
 	return (
 		<div className={styles.list}>
-			{list.listName}
+			<Link href={`/list/${id}`}>{list.listName}</Link>
 			<button onClick={() => deleteList()}>X</button>
 		</div>
 	)

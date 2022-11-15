@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.scss'
 import Head from 'next/head'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 import SignInButton from '../components/SignInButton'
 import SignOutButton from '../components/SignOutButton'
@@ -26,6 +26,7 @@ export default function Home() {
 				{user ? (
 					<>
 						<p>{user.displayName}'s Lists</p>
+						<p>{user.uid}</p>
 						<Lists />
 						<SignOutButton />
 					</>
