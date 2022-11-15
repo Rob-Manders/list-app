@@ -13,7 +13,7 @@ export default function List({ id, list }) {
 
 	return (
 		<div className={styles.list}>
-			<Link href={`/list/${id}`}>{list.listName}</Link>
+			<Link href={`/${user.uid}/${id}`}>{list.listName}</Link>
 			<button onClick={() => deleteList()}>X</button>
 		</div>
 	)
