@@ -19,7 +19,7 @@ export default function Lists(): JSX.Element {
 			{value && (
 				<span>
 					{value.docs.map(list => (
-						<List key={list.id} list={list.data()} />
+						<List key={list.id} id={list.id} list={list.data()} />
 					))}
 				</span>
 			)}

@@ -34,8 +34,7 @@ export default function CreateList() {
 			)
 			const newList = await addDoc(listsCollection, {
 				uid: user.uid,
-				listName: inputValue,
-				listItems: {}
+				listName: inputValue
 			})
 
 			// setInputValue('')
