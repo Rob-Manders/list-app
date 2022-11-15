@@ -1,12 +1,8 @@
 import styles from './Items.module.scss'
 import { collection, doc, getFirestore } from 'firebase/firestore'
-import { useRouter } from 'next/router'
 import { useContext } from 'react'
 import { UserContext } from '../../context/UserContext'
-import {
-	useCollection,
-	useDocumentDataOnce
-} from 'react-firebase-hooks/firestore'
+import { useCollection } from 'react-firebase-hooks/firestore'
 import CreateItem from '../CreateItem'
 import Item from '../Item/Item'
 
@@ -18,8 +14,7 @@ export default function Items({ id }) {
 	)
 
 	return (
-		<>
-			{id}
+		<div>
 			{error && <strong>Error: {JSON.stringify(error)}</strong>}
 			{loading && <span>Collection: Loading...</span>}
 			{value && (
@@ -30,6 +25,6 @@ export default function Items({ id }) {
 				</span>
 			)}
 			<CreateItem listId={id} />
-		</>
+		</div>
 	)
 }

@@ -24,12 +24,11 @@ export default function Home() {
 				<h1 className={styles.title}>List App</h1>
 
 				{user ? (
-					<>
+					<div>
 						<p>{user.displayName}'s Lists</p>
-						<p>{user.uid}</p>
 						<Lists />
 						<SignOutButton />
-					</>
+					</div>
 				) : (
 					<>
 						<p>A simple checklist app for all your checklist needs.</p>
