@@ -1,11 +1,22 @@
 import { doc, getFirestore } from 'firebase/firestore'
 import { useRouter } from 'next/router'
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore'
+import AuthCheck from '../../components/AuthCheck'
 import Items from '../../components/Items'
+import { auth } from '../../lib/firebase/auth'
 
 export default function ListPage() {
+	return (
+		<AuthCheck fallback={<Fallback />}>
+			<ListPageContent />
+		</AuthCheck>
+	)
+}
+
+function ListPageContent() {
 	const router = useRouter()
-	const { uid, id } = router.query
+	const { id } = router.query
+	const uid = auth.currentUser.uid
 
 	const listRef =
 		uid &&
@@ -26,4 +37,8 @@ export default function ListPage() {
 			)}
 		</main>
 	)
+}
+
+function Fallback() {
+	return <main>Please login to view your lists.</main>
 }
