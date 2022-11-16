@@ -6,6 +6,7 @@
 *::before,
 *::after {
 	box-sizing: border-box;
+	outline: none;
 }
 
 html,
@@ -25,11 +26,5 @@ a {
 	&:hover,
 	&:focus {
 		color: $linkHoverColour;
-	}
-}
-
-svg {
-	path {
-		min-height: 48px;
 	}
 }

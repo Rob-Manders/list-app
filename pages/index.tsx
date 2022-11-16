@@ -9,7 +9,7 @@ export default function Home() {
 	const { user } = useContext(UserContext)
 
 	return (
-		<main className={styles.main}>
+		<>
 			{user ? (
 				<>
 					<Lists />
@@ -22,6 +22,6 @@ export default function Home() {
 					<SignInButton />
 				</>
 			)}
-		</main>
+		</>
 	)
 }

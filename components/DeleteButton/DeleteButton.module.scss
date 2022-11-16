@@ -1,9 +1,12 @@
 @use '../../styles/palette' as *;
 
-.checkmarkButton {
+.deleteButton {
 	background: none;
+	fill: $radioUncheckedColour;
 	border: none;
 	padding: 0;
+	cursor: pointer;
+	transition: fill 150ms ease-in-out;
 
 	svg {
 		width: 36px;
@@ -14,22 +17,9 @@
 			stroke-width: 1.25;
 		}
 	}
-}
-
-.checked {
-	fill: $radioCheckedColour;
-}
-
-.unchecked {
-	fill: $radioUncheckedColour;
-}
-
-.clickable {
-	cursor: pointer;
-	transition: fill 150ms ease-in-out;
 
 	&:hover,
 	&:focus {
-		fill: $linkHoverColour;
+		fill: $deleteButtonHoverColour;
 	}
 }

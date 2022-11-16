@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../context/UserContext'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import Checkmark from '../Checkmark'
+import DeleteButton from '../DeleteButton'
 
 export default function List({ id, list }) {
 	const { user } = useContext(UserContext)
@@ -39,7 +40,7 @@ export default function List({ id, list }) {
 					{list.listName}
 				</Link>
 			</div>
-			<button onClick={() => deleteList()}>X</button>
+			<DeleteButton action={deleteList} />
 		</div>
 	)
 }

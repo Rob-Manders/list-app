@@ -36,7 +36,7 @@ export default function Layout({ children }: Props): JSX.Element {
 				</h1>
 			</nav>
 
-			{children}
+			<main className={styles.main}>{children}</main>
 
 			<footer className={styles.footer}>
 				<a href='https://github.com/Rob-Manders/list-app' target='_blank'>

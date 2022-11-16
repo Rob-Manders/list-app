@@ -1,4 +1,4 @@
-import styles from 'Lists.module.scss'
+import styles from './Lists.module.scss'
 import { useContext } from 'react'
 import { UserContext } from '../../context/UserContext'
 import { collection, getFirestore } from 'firebase/firestore'
@@ -13,15 +13,15 @@ export default function Lists(): JSX.Element {
 	)
 
 	return (
-		<div>
+		<div className={styles.lists}>
 			{error && <strong>Error: {JSON.stringify(error)}</strong>}
-			{loading && <span>Collection: Loading...</span>}
+			{loading && <span>Loading...</span>}
 			{value && (
-				<span>
+				<>
 					{value.docs.map(list => (
 						<List key={list.id} id={list.id} list={list.data()} />
 					))}
-				</span>
+				</>
 			)}
 
 			<CreateList />
