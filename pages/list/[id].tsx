@@ -1,3 +1,4 @@
+import styles from '../../styles/ListPage.module.scss'
 import { doc, getFirestore } from 'firebase/firestore'
 import { useRouter } from 'next/router'
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore'
@@ -26,16 +27,16 @@ function ListPageContent() {
 	const [value, loading, error] = useDocumentDataOnce(listRef)
 
 	return (
-		<main>
+		<>
 			{loading && 'Loading...'}
 			{error && 'Unable to load list...'}
 			{value && (
 				<>
-					<h1>{value.listName}</h1>
+					<h2 className={styles.listName}>{value.listName}</h2>
 					<Items id={id.toString()} />
 				</>
 			)}
-		</main>
+		</>
 	)
 }
 

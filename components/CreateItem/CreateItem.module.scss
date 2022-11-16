@@ -1,0 +1,25 @@
+@use '../../styles/palette' as *;
+
+.form {
+	width: 100%;
+	display: flex;
+	margin: 1rem 0;
+}
+
+.input {
+	background-color: $backgroundSecondaryColour;
+	font-size: 1.25rem;
+	width: 100%;
+	margin-right: 0.5rem;
+	padding: 0.5rem;
+	border: 2px solid $backgroundSecondaryColour;
+	border-radius: 4px;
+}
+
+.validInput {
+	border: 2px solid $green;
+}
+
+.invalidInput {
+	border: 2px solid $red;
+}

@@ -2,7 +2,13 @@ import styles from './CreateItem.module.scss'
 import { useContext, useState } from 'react'
 import useValidInput from '../../hooks/useValidInput'
 import { UserContext } from '../../context/UserContext'
-import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import {
+	addDoc,
+	collection,
+	getFirestore,
+	serverTimestamp
+} from 'firebase/firestore'
+import AddButton from '../AddButton'
 
 export default function CreateItem({ listId }) {
 	const [inputValue, setInputValue] = useState('')
@@ -36,7 +42,8 @@ export default function CreateItem({ listId }) {
 			await addDoc(itemsCollection, {
 				uid: user.uid,
 				itemName: inputValue,
-				complete: false
+				complete: false,
+				createdAt: serverTimestamp()
 			})
 
 			setInputValue('')
@@ -44,7 +51,7 @@ export default function CreateItem({ listId }) {
 	}
 
 	return (
-		<div>
+		<form className={styles.form} onSubmit={() => addItem(event)}>
 			<input
 				className={`${styles.input} ${
 					inputValue.length > 0 &&
@@ -55,7 +62,7 @@ export default function CreateItem({ listId }) {
 				onChange={onChange}
 				placeholder='New List...'
 			/>
-			<button onClick={() => addItem(event)}>+</button>
-		</div>
+			<AddButton />
+		</form>
 	)
 }

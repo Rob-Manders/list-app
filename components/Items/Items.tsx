@@ -14,15 +14,15 @@ export default function Items({ id }) {
 	)
 
 	return (
-		<div>
+		<div className={styles.items}>
 			{error && <strong>Error: {JSON.stringify(error)}</strong>}
 			{loading && <span>Collection: Loading...</span>}
 			{value && (
-				<span>
+				<>
 					{value.docs.map(item => (
 						<Item key={item.id} listId={id} id={item.id} item={item.data()} />
 					))}
-				</span>
+				</>
 			)}
 			<CreateItem listId={id} />
 		</div>
