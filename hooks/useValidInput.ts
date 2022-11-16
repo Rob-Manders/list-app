@@ -1,6 +1,6 @@
 export default function useValidInput() {
 	function validInput(input): boolean {
-		if (input.length >= 3 && input.length <= 30) return true
+		if (input.length >= 3 && input.length <= 24) return true
 
 		return false
 	}

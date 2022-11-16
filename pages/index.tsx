@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.scss'
 import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 import SignInButton from '../components/SignInButton'

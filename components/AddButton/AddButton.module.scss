@@ -1,6 +1,6 @@
 @use '../../styles/palette' as *;
 
-.deleteButton {
+.addButton {
 	background: none;
 	fill: $radioUncheckedColour;
 	border: none;
@@ -20,6 +20,6 @@
 
 	&:hover,
 	&:focus {
-		fill: $red;
+		fill: $linkHoverColour;
 	}
 }

@@ -8,5 +8,5 @@ export default function SignIn({}): JSX.Element {
 		await signInWithPopup(auth, googleAuthProvider)
 	}
 
-	return <Button action={signIn}>Sign In</Button>
+	return <Button action={signIn}>Sign in with Google</Button>
 }
