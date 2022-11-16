@@ -11,11 +11,10 @@ export default function Home() {
 	return (
 		<main className={styles.main}>
 			{user ? (
-				<div>
-					<p>{user.displayName}'s Lists</p>
+				<>
 					<Lists />
 					<SignOutButton />
-				</div>
+				</>
 			) : (
 				<>
 					<p>A simple checklist app for all your checklist needs.</p>

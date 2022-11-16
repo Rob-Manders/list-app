@@ -4,6 +4,7 @@ import { doc, deleteDoc, getFirestore, collection } from 'firebase/firestore'
 import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../context/UserContext'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
+import Checkmark from '../Checkmark'
 
 export default function List({ id, list }) {
 	const { user } = useContext(UserContext)
@@ -32,8 +33,12 @@ export default function List({ id, list }) {
 
 	return (
 		<div className={styles.list}>
-			{complete ? 'Y ' : 'N '}
-			<Link href={`/list/${id}`}>{list.listName}</Link>
+			<div className={styles.listName}>
+				<Checkmark checked={complete ? true : false} />
+				<Link className={styles.listLink} href={`/list/${id}`}>
+					{list.listName}
+				</Link>
+			</div>
 			<button onClick={() => deleteList()}>X</button>
 		</div>
 	)
