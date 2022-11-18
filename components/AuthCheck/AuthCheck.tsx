@@ -6,7 +6,7 @@ interface Props {
 	fallback?: string | JSX.Element
 }
 
-export default function AuthCheck({ children, fallback }) {
+export default function AuthCheck({ children, fallback }): JSX.Element {
 	const { user } = useContext(UserContext)
 
 	return user ? children : fallback

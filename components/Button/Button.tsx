@@ -5,7 +5,7 @@ interface ButtonProps {
 	children: string | JSX.Element
 }
 
-export default function Button({ action, children }: ButtonProps) {
+export default function Button({ action, children }: ButtonProps): JSX.Element {
 	return (
 		<button className={styles.button} onClick={action}>
 			{children}

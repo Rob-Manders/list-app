@@ -6,7 +6,7 @@ import { UserContext } from '../../context/UserContext'
 import Checkmark from '../Checkmark'
 import DeleteButton from '../DeleteButton'
 
-export default function Item({ listId, id, item }) {
+export default function Item({ listId, id, item }): JSX.Element {
 	const { user } = useContext(UserContext)
 	const itemRef = doc(
 		getFirestore(),
@@ -17,9 +17,9 @@ export default function Item({ listId, id, item }) {
 		'items',
 		id
 	)
-	const [value, loading, error] = useDocumentData(itemRef)
+	const [value] = useDocumentData(itemRef)
 
-	async function toggleComplete() {
+	async function toggleComplete(): Promise<void> {
 		setDoc(
 			itemRef,
 			{
@@ -29,7 +29,7 @@ export default function Item({ listId, id, item }) {
 		)
 	}
 
-	async function deleteItem() {
+	async function deleteItem(): Promise<void> {
 		await deleteDoc(
 			doc(getFirestore(), 'users', user.uid, 'lists', listId, 'items', id)
 		)

@@ -1,13 +1,24 @@
 import styles from './List.module.scss'
 import Link from 'next/link'
-import { doc, deleteDoc, getFirestore, collection } from 'firebase/firestore'
+import {
+	doc,
+	deleteDoc,
+	getFirestore,
+	collection,
+	DocumentData
+} from 'firebase/firestore'
 import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../context/UserContext'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import Checkmark from '../Checkmark'
 import DeleteButton from '../DeleteButton'
 
-export default function List({ id, list }) {
+interface Props {
+	id: string
+	list: DocumentData
+}
+
+export default function List({ id, list }: Props) {
 	const { user } = useContext(UserContext)
 	const [complete, setComplete] = useState(false)
 	const [values] = useCollectionData(
@@ -28,7 +39,7 @@ export default function List({ id, list }) {
 		}
 	}, [values])
 
-	async function deleteList() {
+	async function deleteList(): Promise<void> {
 		await deleteDoc(doc(getFirestore(), 'users', user.uid, 'lists', id))
 	}
 

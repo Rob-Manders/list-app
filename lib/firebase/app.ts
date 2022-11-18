@@ -17,4 +17,4 @@ function createFirebaseApp(config): FirebaseApp {
 	}
 }
 
-export const firebaseApp = createFirebaseApp(firebaseConfig)
+export const firebaseApp: FirebaseApp = createFirebaseApp(firebaseConfig)

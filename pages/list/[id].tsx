@@ -6,7 +6,7 @@ import AuthCheck from '../../components/AuthCheck'
 import Items from '../../components/Items'
 import { auth } from '../../lib/firebase/auth'
 
-export default function ListPage() {
+export default function ListPage(): JSX.Element {
 	return (
 		<AuthCheck fallback={<Fallback />}>
 			<ListPageContent />
@@ -14,7 +14,7 @@ export default function ListPage() {
 	)
 }
 
-function ListPageContent() {
+function ListPageContent(): JSX.Element {
 	const router = useRouter()
 	const { id } = router.query
 	const uid = auth.currentUser.uid
@@ -40,6 +40,6 @@ function ListPageContent() {
 	)
 }
 
-function Fallback() {
+function Fallback(): JSX.Element {
 	return <main>Please login to view your lists.</main>
 }

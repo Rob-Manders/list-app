@@ -5,7 +5,7 @@ import SignInButton from '../components/SignInButton'
 import SignOutButton from '../components/SignOutButton'
 import Lists from '../components/Lists'
 
-export default function Home() {
+export default function Home(): JSX.Element {
 	const { user } = useContext(UserContext)
 
 	return (

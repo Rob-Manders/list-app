@@ -1,4 +1,3 @@
-import styles from 'SignOutButton.module.scss'
 import { auth } from '../../lib/firebase/auth'
 import Button from '../Button'
 

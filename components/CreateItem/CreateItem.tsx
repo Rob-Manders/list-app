@@ -10,13 +10,13 @@ import {
 } from 'firebase/firestore'
 import AddButton from '../AddButton'
 
-export default function CreateItem({ listId }) {
+export default function CreateItem({ listId }): JSX.Element {
 	const [inputValue, setInputValue] = useState('')
 	const [valid, setValid] = useState(false)
 	const { validInput } = useValidInput()
 	const { user } = useContext(UserContext)
 
-	function onChange(event) {
+	function onChange(event): void {
 		setInputValue(event.target.value)
 
 		if (validInput(inputValue)) {
@@ -26,7 +26,7 @@ export default function CreateItem({ listId }) {
 		}
 	}
 
-	async function addItem(event) {
+	async function addItem(event): Promise<void> {
 		event.preventDefault()
 
 		if (valid) {

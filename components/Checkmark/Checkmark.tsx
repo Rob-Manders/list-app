@@ -14,9 +14,10 @@ export default function Checkmark({
 	return (
 		<button
 			onClick={action ? action : null}
-			className={`${styles.checkmarkButton} ${
-				checked ? styles.checked : styles.unchecked
-			} ${action && styles.clickable}`}
+			className={`
+				${styles.checkmarkButton} 
+				${checked ? styles.checked : styles.unchecked} 
+				${action && styles.clickable}`}
 		>
 			{checked ? <Icon_RadioChecked /> : <Icon_RadioUnchecked />}
 		</button>

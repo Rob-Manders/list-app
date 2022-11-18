@@ -11,14 +11,14 @@ import {
 import { useRouter } from 'next/router'
 import AddButton from '../AddButton/AddButton'
 
-export default function CreateList() {
+export default function CreateList(): JSX.Element {
 	const [inputValue, setInputValue] = useState('')
 	const [valid, setValid] = useState(false)
 	const { validInput } = useValidInput()
 	const { user } = useContext(UserContext)
 	const router = useRouter()
 
-	function onChange(event) {
+	function onChange(event): void {
 		setInputValue(event.target.value)
 
 		if (validInput(inputValue)) {
@@ -28,7 +28,7 @@ export default function CreateList() {
 		}
 	}
 
-	async function addList(event) {
+	async function addList(event): Promise<void> {
 		event.preventDefault()
 
 		if (valid) {

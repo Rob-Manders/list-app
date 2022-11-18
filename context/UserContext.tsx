@@ -1,3 +1,4 @@
+import { User } from 'firebase/auth'
 import {
 	doc,
 	getDoc,
@@ -5,19 +6,28 @@ import {
 	serverTimestamp,
 	setDoc
 } from 'firebase/firestore'
-import { createContext, useEffect } from 'react'
+import { Context, createContext, useEffect } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../lib/firebase/auth'
-import { UserData } from '../lib/interfaces'
 
-export const UserContext = createContext<UserData>({ user: null })
+interface UserData {
+	user: null | User
+}
 
-export default function UserContextProvider({ children }) {
+interface Props {
+	children: JSX.Element
+}
+
+export const UserContext: Context<UserData> = createContext<UserData>({
+	user: null
+})
+
+export default function UserContextProvider({ children }: Props) {
 	const [user] = useAuthState(auth)
 
 	useEffect(() => {
 		// Add user to database if  they don't exist.
-		async function addUser() {
+		async function addUser(): Promise<void> {
 			const userDoc = doc(getFirestore(), 'users', user.uid)
 			const userSnapshot = await getDoc(userDoc)
 

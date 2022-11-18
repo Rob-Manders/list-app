@@ -1,12 +1,16 @@
 import styles from './Items.module.scss'
-import { collection, doc, getFirestore } from 'firebase/firestore'
+import { collection, getFirestore } from 'firebase/firestore'
 import { useContext } from 'react'
 import { UserContext } from '../../context/UserContext'
 import { useCollection } from 'react-firebase-hooks/firestore'
 import CreateItem from '../CreateItem'
 import Item from '../Item/Item'
 
-export default function Items({ id }) {
+interface Props {
+	id: string
+}
+
+export default function Items({ id }): JSX.Element {
 	const { user } = useContext(UserContext)
 
 	const [value, loading, error] = useCollection(
