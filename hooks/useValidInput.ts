@@ -1,6 +1,9 @@
 export default function useValidInput() {
+	const MIN_LENGTH = 2
+	const MAX_LENGTH = 24
+
 	function validInput(input): boolean {
-		if (input.length >= 3 && input.length <= 24) return true
+		if (input.length >= MIN_LENGTH && input.length <= MAX_LENGTH) return true
 
 		return false
 	}
