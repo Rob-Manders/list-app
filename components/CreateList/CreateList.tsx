@@ -38,13 +38,12 @@ export default function CreateList(): JSX.Element {
 				user.uid,
 				'lists'
 			)
-			const newList = await addDoc(listsCollection, {
+
+			await addDoc(listsCollection, {
 				uid: user.uid,
 				listName: inputValue,
 				createdAt: serverTimestamp()
 			})
-
-			router.push(`/list/${newList.id}`)
 		}
 	}
 
