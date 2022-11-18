@@ -1,5 +1,5 @@
 export default function useValidInput() {
-	const MIN_LENGTH: number = 2
+	const MIN_LENGTH: number = 1
 	const MAX_LENGTH: number = 24
 
 	function validInput(input: string): boolean {
