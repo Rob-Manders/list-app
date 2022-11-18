@@ -42,7 +42,7 @@ export default function Layout({ children }: Props): JSX.Element {
 				<a
 					href='https://github.com/Rob-Manders/list-app'
 					target='_blank'
-					rel='noopener'
+					rel='noreferrer'
 				>
 					GitHub
 				</a>
