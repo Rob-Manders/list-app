@@ -9,10 +9,7 @@ import {
 import { Context, createContext, useEffect } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../lib/firebase/auth'
-
-interface UserData {
-	user: null | User
-}
+import { UserData } from '../lib/interfaces'
 
 interface Props {
 	children: JSX.Element
