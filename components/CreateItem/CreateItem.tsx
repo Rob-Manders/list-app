@@ -57,10 +57,10 @@ export default function CreateItem({ listId }): JSX.Element {
 					inputValue.length > 0 &&
 					(valid ? styles.validInput : styles.invalidInput)
 				}`}
-				name='listTitle'
+				name='itemName'
 				value={inputValue}
 				onChange={onChange}
-				placeholder='New List...'
+				placeholder='New Item...'
 			/>
 			<AddButton />
 		</form>
